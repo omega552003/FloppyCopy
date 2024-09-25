@@ -10,11 +10,8 @@ Help()
    echo
    echo "Syntax: floppycopy.sh [-f|h]"
    echo "options:"
-   #echo "g     Print the GPL license notification."
    echo "f     output filename."
    echo "h     Print this Help."
-   #echo "v     Verbose mode."
-   #echo "V     Print software version and exit."
    echo
 }
 
@@ -26,12 +23,14 @@ Help()
 
 # Set variables
 ROOTDIR=$(dirname $0)
+FILENAME=
 
 ############################################################
 # Process the input options. Add options as needed.        #
+# Ensure options that quit the script are first.           #
 ############################################################
 # Get the options
-while getopts ":fh:" option; do
+while getopts ":hf:" option; do
    case $option in
       h) # display Help
          Help
@@ -45,7 +44,7 @@ while getopts ":fh:" option; do
 done
 
 # Get file name from user input
-if test -z $FILENAME ; then
+if [ -z $FILENAME ]; then
     read -p "Enter Filename: " FILENAME
 fi
 
