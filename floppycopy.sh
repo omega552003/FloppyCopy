@@ -45,7 +45,7 @@ while getopts ":fh:" option; do
 done
 
 # Get file name from user input
-if [ ! $FILENAME ]; then
+if test -z $FILENAME ; then
     read -p "Enter Filename: " FILENAME
 fi
 
