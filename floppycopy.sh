@@ -31,7 +31,7 @@ ROOTDIR=$(dirname $0)
 # Process the input options. Add options as needed.        #
 ############################################################
 # Get the options
-while getopts ":hn:" option; do
+while getopts ":fh:" option; do
    case $option in
       h) # display Help
          Help
